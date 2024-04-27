@@ -1,4 +1,4 @@
-Simple soft for STM32L476RG and ATMEGA328P to represent SPI connection between two microcontrollers.
+Soft for STM32L476RG (SPI master) and ATMEGA328P (SPI slave) to represent SPI connection between two microcontrollers.
 
 Graphic 1: Connection graph
 
