@@ -1,0 +1,315 @@
+
+SPI_arduino_GCC.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000044  00800100  000001d2  00000246  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000001d2  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  0000028a  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000002bc  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000088  00000000  00000000  000002fc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000009c3  00000000  00000000  00000384  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000007e6  00000000  00000000  00000d47  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000403  00000000  00000000  0000152d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000160  00000000  00000000  00001930  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000400  00000000  00000000  00001a90  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000027c  00000000  00000000  00001e90  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000058  00000000  00000000  0000210c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+   8:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+   c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  10:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  14:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  18:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  1c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  20:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  24:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  28:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  2c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  30:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  34:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  38:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  3c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  40:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  44:	0c 94 93 00 	jmp	0x126	; 0x126 <__vector_17>
+  48:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__vector_18>
+  4c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  50:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  54:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  58:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  5c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  60:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  64:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e2 ed       	ldi	r30, 0xD2	; 210
+  7c:	f1 e0       	ldi	r31, 0x01	; 1
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a4 34       	cpi	r26, 0x44	; 68
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+  8a:	0e 94 c3 00 	call	0x186	; 0x186 <main>
+  8e:	0c 94 e7 00 	jmp	0x1ce	; 0x1ce <_exit>
+
+00000092 <__bad_interrupt>:
+  92:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000096 <init_atmega>:
+
+#include "init.h"
+
+void init_atmega(unsigned int ubrr){
+	//ports
+	DDRB = 0b00010000; // 0 - input, 1 - output
+  96:	20 e1       	ldi	r18, 0x10	; 16
+  98:	24 b9       	out	0x04, r18	; 4
+	DDRC = 0b00000000; // DDR 7 - 0
+  9a:	17 b8       	out	0x07, r1	; 7
+	DDRD = 0b10000000; // PB4 (MISO) output, PD7 output (LED)
+  9c:	20 e8       	ldi	r18, 0x80	; 128
+  9e:	2a b9       	out	0x0a, r18	; 10
+	
+	PORTB = 0xFF;
+  a0:	2f ef       	ldi	r18, 0xFF	; 255
+  a2:	25 b9       	out	0x05, r18	; 5
+	PORTC = 0xFF;
+  a4:	28 b9       	out	0x08, r18	; 8
+	PORTD = 0x7F; // PORTS PULL_UP
+  a6:	2f e7       	ldi	r18, 0x7F	; 127
+  a8:	2b b9       	out	0x0b, r18	; 11
+	
+	//usart
+	UBRR0H = (unsigned char)(ubrr >> 8);
+  aa:	90 93 c5 00 	sts	0x00C5, r25	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
+	UBRR0L = (unsigned char)ubrr;
+  ae:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
+	
+	UCSR0B = (1<<RXCIE0)|(1<<RXEN0)|(1<<TXEN0); //recive interrupt, recive on, transmit on
+  b2:	88 e9       	ldi	r24, 0x98	; 152
+  b4:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+	UCSR0C = (1<<USBS0)|(3<<UCSZ00); //two stop bits, eight data bits
+  b8:	8e e0       	ldi	r24, 0x0E	; 14
+  ba:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7f80c2>
+	
+	//SPI
+	SPCR = (1<<SPIE)|(1<<SPE); //spi interrupt enable
+  be:	80 ec       	ldi	r24, 0xC0	; 192
+  c0:	8c bd       	out	0x2c, r24	; 44
+	//SPCR = (1<<SPE); //spi interrupt disable
+	
+	//global_interrupts
+	sei();
+  c2:	78 94       	sei
+  c4:	08 95       	ret
+
+000000c6 <__vector_18>:
+const char spi_string[] = "(ATMEGA) Value received by SPI: ";
+//global variables
+
+
+//intterupts
+ISR(USART_RX_vect){
+  c6:	1f 92       	push	r1
+  c8:	0f 92       	push	r0
+  ca:	0f b6       	in	r0, 0x3f	; 63
+  cc:	0f 92       	push	r0
+  ce:	11 24       	eor	r1, r1
+  d0:	2f 93       	push	r18
+  d2:	3f 93       	push	r19
+  d4:	4f 93       	push	r20
+  d6:	5f 93       	push	r21
+  d8:	6f 93       	push	r22
+  da:	7f 93       	push	r23
+  dc:	8f 93       	push	r24
+  de:	9f 93       	push	r25
+  e0:	af 93       	push	r26
+  e2:	bf 93       	push	r27
+  e4:	cf 93       	push	r28
+  e6:	ef 93       	push	r30
+  e8:	ff 93       	push	r31
+	unsigned char a;
+	a = UDR0;
+  ea:	c0 91 c6 00 	lds	r28, 0x00C6	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+	USART_Transmit2((unsigned char*)usart_string);
+  ee:	81 e2       	ldi	r24, 0x21	; 33
+  f0:	91 e0       	ldi	r25, 0x01	; 1
+  f2:	0e 94 cf 00 	call	0x19e	; 0x19e <USART_Transmit2>
+	USART_Transmit(a); USART_NewLine();
+  f6:	8c 2f       	mov	r24, r28
+  f8:	0e 94 c8 00 	call	0x190	; 0x190 <USART_Transmit>
+  fc:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <USART_NewLine>
+	
+	SPDR = a;
+ 100:	ce bd       	out	0x2e, r28	; 46
+}
+ 102:	ff 91       	pop	r31
+ 104:	ef 91       	pop	r30
+ 106:	cf 91       	pop	r28
+ 108:	bf 91       	pop	r27
+ 10a:	af 91       	pop	r26
+ 10c:	9f 91       	pop	r25
+ 10e:	8f 91       	pop	r24
+ 110:	7f 91       	pop	r23
+ 112:	6f 91       	pop	r22
+ 114:	5f 91       	pop	r21
+ 116:	4f 91       	pop	r20
+ 118:	3f 91       	pop	r19
+ 11a:	2f 91       	pop	r18
+ 11c:	0f 90       	pop	r0
+ 11e:	0f be       	out	0x3f, r0	; 63
+ 120:	0f 90       	pop	r0
+ 122:	1f 90       	pop	r1
+ 124:	18 95       	reti
+
+00000126 <__vector_17>:
+
+ISR(SPI_STC_vect){
+ 126:	1f 92       	push	r1
+ 128:	0f 92       	push	r0
+ 12a:	0f b6       	in	r0, 0x3f	; 63
+ 12c:	0f 92       	push	r0
+ 12e:	11 24       	eor	r1, r1
+ 130:	2f 93       	push	r18
+ 132:	3f 93       	push	r19
+ 134:	4f 93       	push	r20
+ 136:	5f 93       	push	r21
+ 138:	6f 93       	push	r22
+ 13a:	7f 93       	push	r23
+ 13c:	8f 93       	push	r24
+ 13e:	9f 93       	push	r25
+ 140:	af 93       	push	r26
+ 142:	bf 93       	push	r27
+ 144:	cf 93       	push	r28
+ 146:	ef 93       	push	r30
+ 148:	ff 93       	push	r31
+	unsigned char spi;
+	spi = SPDR;
+ 14a:	ce b5       	in	r28, 0x2e	; 46
+	USART_Transmit2((unsigned char*)spi_string);
+ 14c:	80 e0       	ldi	r24, 0x00	; 0
+ 14e:	91 e0       	ldi	r25, 0x01	; 1
+ 150:	0e 94 cf 00 	call	0x19e	; 0x19e <USART_Transmit2>
+	USART_Transmit(spi); USART_NewLine(); USART_NewLine();
+ 154:	8c 2f       	mov	r24, r28
+ 156:	0e 94 c8 00 	call	0x190	; 0x190 <USART_Transmit>
+ 15a:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <USART_NewLine>
+ 15e:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <USART_NewLine>
+}
+ 162:	ff 91       	pop	r31
+ 164:	ef 91       	pop	r30
+ 166:	cf 91       	pop	r28
+ 168:	bf 91       	pop	r27
+ 16a:	af 91       	pop	r26
+ 16c:	9f 91       	pop	r25
+ 16e:	8f 91       	pop	r24
+ 170:	7f 91       	pop	r23
+ 172:	6f 91       	pop	r22
+ 174:	5f 91       	pop	r21
+ 176:	4f 91       	pop	r20
+ 178:	3f 91       	pop	r19
+ 17a:	2f 91       	pop	r18
+ 17c:	0f 90       	pop	r0
+ 17e:	0f be       	out	0x3f, r0	; 63
+ 180:	0f 90       	pop	r0
+ 182:	1f 90       	pop	r1
+ 184:	18 95       	reti
+
+00000186 <main>:
+
+//main function
+int main(void)
+{
+	init_atmega(MYUBRR);
+ 186:	87 e6       	ldi	r24, 0x67	; 103
+ 188:	90 e0       	ldi	r25, 0x00	; 0
+ 18a:	0e 94 4b 00 	call	0x96	; 0x96 <init_atmega>
+ 18e:	ff cf       	rjmp	.-2      	; 0x18e <main+0x8>
+
+00000190 <USART_Transmit>:
+ */ 
+
+#include "usart.h"
+
+void USART_Transmit(unsigned char data){
+	while(!(UCSR0A & (1 << UDRE0)));
+ 190:	90 91 c0 00 	lds	r25, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+ 194:	95 ff       	sbrs	r25, 5
+ 196:	fc cf       	rjmp	.-8      	; 0x190 <USART_Transmit>
+	UDR0 = data;
+ 198:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+ 19c:	08 95       	ret
+
+0000019e <USART_Transmit2>:
+}
+
+void USART_Transmit2(unsigned char *data){
+ 19e:	cf 93       	push	r28
+ 1a0:	df 93       	push	r29
+ 1a2:	ec 01       	movw	r28, r24
+	while(*data != 0x00){
+ 1a4:	88 81       	ld	r24, Y
+ 1a6:	88 23       	and	r24, r24
+ 1a8:	49 f0       	breq	.+18     	; 0x1bc <USART_Transmit2+0x1e>
+		if(*data == '\n'){
+ 1aa:	8a 30       	cpi	r24, 0x0A	; 10
+ 1ac:	19 f4       	brne	.+6      	; 0x1b4 <USART_Transmit2+0x16>
+			USART_Transmit('\r');
+ 1ae:	8d e0       	ldi	r24, 0x0D	; 13
+ 1b0:	0e 94 c8 00 	call	0x190	; 0x190 <USART_Transmit>
+		}
+		USART_Transmit(*data);
+ 1b4:	89 91       	ld	r24, Y+
+ 1b6:	0e 94 c8 00 	call	0x190	; 0x190 <USART_Transmit>
+ 1ba:	f4 cf       	rjmp	.-24     	; 0x1a4 <USART_Transmit2+0x6>
+		data++;
+	}
+}
+ 1bc:	df 91       	pop	r29
+ 1be:	cf 91       	pop	r28
+ 1c0:	08 95       	ret
+
+000001c2 <USART_NewLine>:
+
+void USART_NewLine(){
+	USART_Transmit('\n'); 
+ 1c2:	8a e0       	ldi	r24, 0x0A	; 10
+ 1c4:	0e 94 c8 00 	call	0x190	; 0x190 <USART_Transmit>
+	USART_Transmit('\r');
+ 1c8:	8d e0       	ldi	r24, 0x0D	; 13
+ 1ca:	0c 94 c8 00 	jmp	0x190	; 0x190 <USART_Transmit>
+
+000001ce <_exit>:
+ 1ce:	f8 94       	cli
+
+000001d0 <__stop_program>:
+ 1d0:	ff cf       	rjmp	.-2      	; 0x1d0 <__stop_program>

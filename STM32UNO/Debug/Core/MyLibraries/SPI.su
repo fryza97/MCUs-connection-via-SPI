@@ -1,0 +1,17 @@
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:358:22:LL_SPI_Enable	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:370:22:LL_SPI_Disable	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:916:26:LL_SPI_IsActiveFlag_TXE	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:967:26:LL_SPI_IsActiveFlag_BSY	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:993:26:LL_SPI_GetRxFIFOLevel	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:1008:26:LL_SPI_GetTxFIFOLevel	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:1048:22:LL_SPI_ClearFlag_OVR	24	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:1108:22:LL_SPI_EnableIT_TXE	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:1131:22:LL_SPI_DisableIT_RXNE	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:1142:22:LL_SPI_DisableIT_TXE	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:1333:25:LL_SPI_ReceiveData8	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h:1356:22:LL_SPI_TransmitData8	24	static
+../Core/MyLibraries/SPI.c:15:6:SPISendData	32	static
+../Core/MyLibraries/SPI.c:44:6:SPIInterruptSend	16	static
+../Core/MyLibraries/SPI.c:48:9:SPIInterruptReceive	16	static
+../Core/MyLibraries/SPI.c:52:6:SPIInterrruptEnable	16	static
+../Core/MyLibraries/SPI.c:58:6:SPIInterrruptDisable	16	static

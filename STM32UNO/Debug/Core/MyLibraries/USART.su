@@ -1,0 +1,5 @@
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_usart.h:3183:26:LL_USART_IsActiveFlag_TXE	16	static
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_usart.h:4568:22:LL_USART_TransmitData8	16	static
+../Core/MyLibraries/USART.c:11:6:UsartSendByte	16	static
+../Core/MyLibraries/USART.c:16:6:UsartSendString	16	static
+../Core/MyLibraries/USART.c:26:6:UsartNewLine	16	static
